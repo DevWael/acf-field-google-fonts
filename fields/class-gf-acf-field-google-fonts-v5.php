@@ -138,14 +138,21 @@ class gf_acf_field_google_fonts extends acf_field {
 	 */
 
 	function render_field( $field ) {
+
+//		echo '<pre style="direction: ltr; text-align: left">';
+//		print_r( $field );
+//		echo '</pre>';
+
 		$json_url = $this->settings['url'] . 'inc/google-fonts.json';
 		/*
 		*  Create a simple text input using the 'font_size' setting.
 		*/
 		?>
         <div class="google-fonts-container" id="gfont-container-<?php echo $field['id']; ?>">
-            <select name="" class="gf-select" id="gfont-<?php echo $field['id']; ?>"></select>
-            <div class="font-preview">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=<?php echo esc_attr( $field['value'] ) ?>">
+            <select name="<?php echo $field['name']; ?>" class="gf-select"
+                    id="gfont-<?php echo $field['id']; ?>"></select>
+            <div class="font-preview" style="font-family: <?php echo esc_attr( $field['value'] ) ?>">
                 ABCDEFGHIJKLMNOPQRSTUVWXYZ <br>
                 abcdefghijklmnopqrstuvwxyz
                 <br>
@@ -154,13 +161,10 @@ class gf_acf_field_google_fonts extends acf_field {
                     الحب سماء لا تمطر غير الأحلام.
                 </span>
             </div>
-            <input type="text" name="<?php echo esc_attr( $field['name'] ) ?>"
-                   value="<?php echo esc_attr( $field['value'] ) ?>"
-                   style="font-size:<?php echo $field['font_size'] ?>px;"/>
             <script>
                 (function ($) {
-                    var saved_font = 'Ubuntu';
-                     $.getJSON("<?php echo $json_url;?>", function (fontsData) {
+                    var saved_font = '<?php echo esc_attr( $field['value'] ) ?>';
+                    $.getJSON("<?php echo $json_url;?>", function (fontsData) {
                         //console.log(fonts);
                         var fonts = fontsData.items,
                             fontsArray = fonts.map(function (font) {
@@ -474,7 +478,7 @@ class gf_acf_field_google_fonts extends acf_field {
 
 		// Advanced usage
 		if ( in_array( $value, $validation_fonts ) ) {
-			$valid = __( 'The value is too little!', 'acfgf' );
+			//$valid = __( 'The value is too little!', 'acfgf' );
 		}
 
 
@@ -549,15 +553,14 @@ class gf_acf_field_google_fonts extends acf_field {
 	*  @return	$field
 	*/
 
-	/*
-	
+
 	function update_field( $field ) {
-		
+
 		return $field;
-		
-	}	
-	
-	*/
+
+	}
+
+
 
 
 	/*
