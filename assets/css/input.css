@@ -1,0 +1,15 @@
+.google-fonts-container .font-preview{
+    background-color: #fff;
+    border: 2px dashed #eee;
+    padding: 30px;
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+}
+
+.google-fonts-container .font-preview .arabic-text{
+    letter-spacing: 0;
+}
