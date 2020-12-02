@@ -1,7 +1,7 @@
 <?php
 /**
 Plugin Name: ACF Google Fonts
-Plugin URI: https://www.bbioon.com
+Plugin URI: https://github.com/DevWael/acf-field-google-fonts
 Description: Add google fonts selector field to Advanced custom fields plugin.
 Version: 1.0
 Author: Ahmad Wael
