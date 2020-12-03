@@ -152,7 +152,7 @@ class gf_acf_field_google_fonts extends acf_field {
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=<?php echo esc_attr( $field['value'] ) ?>">
             <select name="<?php echo $field['name']; ?>" class="gf-select"
                     id="gfont-<?php echo $field['id']; ?>"></select>
-            <div class="font-preview" style="font-family: <?php echo esc_attr( $field['value'] ) ?>">
+            <div class="font-preview noselect" style="font-family: <?php echo esc_attr( $field['value'] ) ?>">
                 ABCDEFGHIJKLMNOPQRSTUVWXYZ <br>
                 abcdefghijklmnopqrstuvwxyz
                 <br>
